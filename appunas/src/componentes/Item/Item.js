@@ -1,4 +1,4 @@
-const Item = () => {
+const Item = ({nombre, img, precio}) => {
   return (
     <li>
         {nombre}
