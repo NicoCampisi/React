@@ -3,7 +3,7 @@ const products = [
         id: '1',
         category: 'esmaltes',
         name: 'Esmalte',
-        precio: 11000,
+        price: 11000,
         img: 'https://http2.mlstatic.com/D_NQ_NP_620250-MLA46117161311_052021-O.webp',
         stock: '15'
     },   
@@ -11,7 +11,7 @@ const products = [
         id: '2',
         category: 'herramientas',
         name: 'Herramienta',
-        precio: 12000,
+        price: 12000,
         img: 'https://d2r9epyceweg5n.cloudfront.net/stores/001/611/635/products/7-11-49cc66188022dc873816240242516549-1024-1024.jpg',
         stock: '15'
     },   
@@ -19,7 +19,7 @@ const products = [
         id: '3',
         category: 'cabinas',
         name: 'Cabina 3',
-        precio: 13000,
+        price: 13000,
         img: 'https://http2.mlstatic.com/D_NQ_NP_735729-MLA45108397585_032021-O.webp',
         stock: '15'
     }   
@@ -32,7 +32,7 @@ export const getProducts = () => {
         }, 500)
     })
 }
-export const getProductsByCatergory = () => {
+export const getProductsByCatergory = (categoryId) => {
     return new Promise ((resolve, reject) => {
         setTimeout(() =>{
             resolve(products.filter(prod => prod.category === categoryId))

@@ -1,11 +1,11 @@
 import { Link } from "react-router-dom"
-const Item = ({id, nombre, img, precio}) => {
+const Item = ({id, name, img, price}) => {
   return (
     <article>
       <li>
-          {nombre}
-          <img src={img} alt={nombre}/>
-          {precio}
+          {name}
+          <img src={img} alt={name}/>
+          {price}
       </li>
       <footer>
         <Link to={`/detail/${id}`}> Ver detalle </Link>

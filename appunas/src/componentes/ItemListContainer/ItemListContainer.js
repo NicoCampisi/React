@@ -1,10 +1,11 @@
 import { useState, useEffect} from 'react'
-import { getProducts } from '../../asyncmock'
+import { getProducts, getProductsByCatergory } from '../../asyncmock'
 import ItemList from '../ItemList/ItemList'
 import { useParams } from 'react-router-dom'
 
 const ItemListContainer = (props) => {
     const [products, setProducts] = useState ([])
+
     const { categoryId } = useParams()
     
     useEffect (() => {
@@ -14,12 +15,21 @@ const ItemListContainer = (props) => {
             }).catch(error => {
                 console.log(error)
             })
-        } 
-    }, [])
+        }else {
+            getProductsByCatergory(categoryId).then(prods => {
+                setProducts(prods)
+            }).catch(error => {
+                console.log(error)
+            })
+        }
+
+    }, [categoryId])
 
     return(
         <div>
-            <ItemList products = {[products]}/>
+            {products.length>0
+            ? <ItemList products = {products}/>
+            : <h1> NO HAY PRODUCTOS</h1>}
         </div>
     )
 }
