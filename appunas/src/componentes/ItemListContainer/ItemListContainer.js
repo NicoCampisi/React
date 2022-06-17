@@ -6,7 +6,18 @@ import { useParams } from 'react-router-dom'
 const ItemListContainer = (props) => {
     const [products, setProducts] = useState ([])
 
-    const { categoryId } = useParams()
+    const { categoryId } = useParams() 
+
+    useEffect (()=>{
+
+        const onResize = () => { 
+            console.log('cambio tamaño')
+        }
+            window.addEventListener('resize',onResize)
+            return () => {
+                window.removeEventListener('resize', onResize )
+            }
+    }, [])
     
     useEffect (() => {
         if(!categoryId){
