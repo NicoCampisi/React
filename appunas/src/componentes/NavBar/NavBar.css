@@ -1,0 +1,44 @@
+/* .NavBar {
+    height: 60px ;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #5265c4;
+  }
+
+.Title{
+  font-size: 21px;
+  color: #ffffff;
+  margin: 15px;
+  font-weight: 700;
+}
+  
+  .Categories {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 16px;
+    margin: 15px;
+    position: relative;
+    opacity: 0.9;
+  }
+
+  .Categories:hover{
+    opacity: 1;
+  }
+
+  .Categories::before{
+   content: "";
+   position: absolute;
+   left: 0;
+   bottom: 0;
+   width: 100%;
+   height: 2px;
+   background-color: #ffffff;
+   transition: all .45s;
+  }
+  
+  .Categories:hover::before{
+    width: 100%;
+  }
+  
+   */

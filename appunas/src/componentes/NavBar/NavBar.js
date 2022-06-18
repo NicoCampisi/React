@@ -1,21 +1,22 @@
 
-import CartWidget from '../CartWidget/CartWidget';
-import { Link } from 'react-router-dom';
+import './NavBar.css'
+import CartWidget from '../CartWidget/CartWidget'
+import { Link, NavLink } from 'react-router-dom'
 
 const NavBar = () => {
-    return(
-        <nav>
-            <Link to='/'>
-                <h3>Tina Nails Ecommerce</h3>
-            </Link>
-            <div>
-                <Link to='/category/esmaltes'>Esmaltes</Link>
-                <Link to='/category/cabinas'>Cabinas</Link>
-                <Link to='/category/herramientas'>Herramientas</Link>
-            </div>
-            <CartWidget />
-        </nav>
-    )
+  return (
+      <nav className="NavBar" >
+        <Link to='/'>
+          <h3 className='Title'>Tina Nails Ecommerce</h3>
+        </Link>
+        <div className="Categories">
+          <NavLink to='/category/esmaltes' className={({ isActive }) => isActive ? 'ActiveOption' : 'Option'}>Esmaltes</NavLink>
+          <NavLink to='/category/herramientas' className={({ isActive }) => isActive ? 'ActiveOption' : 'Option'}>Cabinas</NavLink>
+          <NavLink to='/category/cabinas' className={({ isActive }) => isActive ? 'ActiveOption' : 'Option'}>Herramientas</NavLink>
+        </div>
+        <CartWidget />
+      </nav>
+  )
 }
 
 export default NavBar
